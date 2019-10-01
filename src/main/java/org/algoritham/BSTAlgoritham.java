@@ -7,14 +7,31 @@ public class BSTAlgoritham {
 		
 		Node root = convertToBST(arr, 0, arr.length -1);
 		printTree(root);
+		
+		mirror(root);
+		System.out.println("===================");
+		printTree(root);
+	}
+
+	private static Node mirror(Node root) {
+		if(root == null) return null;
+		
+		Node left = mirror(root.left);
+		Node right = mirror(root.right);
+		
+		root.left = right;
+		root.right = left;
+		
+		return root;
+		
 	}
 
 	private static void printTree(Node root) {
 		if(root == null) return;
 		
-		System.out.println(root.data);
+	
 		printTree(root.left);
-
+		System.out.println(root.data);
 		printTree(root.right);
 		}
 

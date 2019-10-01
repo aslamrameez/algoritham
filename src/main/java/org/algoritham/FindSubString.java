@@ -6,7 +6,7 @@ public class FindSubString {
 
 	public static void main(String[] args) {
 		String str = "this isr at te rt string";
-		String pat = "rt";
+		String pat = "rts";
 
 		System.out.print("Smallest window is :\n " + findSubString(str, pat));
 
